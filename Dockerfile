@@ -15,7 +15,6 @@ RUN apt install -y git unzip neovim \
 
 # cute shell
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended && \
-	#chsh -s /usr/bin/zsh && \
 	sed -i -e 's/robbyrussell/minimal/' ~/.zshrc 
 
 # tools
