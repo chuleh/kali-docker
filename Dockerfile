@@ -26,7 +26,7 @@ RUN apt install -y nmap dirb gobuster masscan wfuzz \
 # secList
 RUN git clone https://github.com/danielmiessler/SecLists /seclists
 
-WORKDIR pentest/
+WORKDIR /pentest/
 
 CMD ["/usr/bin/zsh"]
 
