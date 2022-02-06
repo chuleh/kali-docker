@@ -1,0 +1,12 @@
+name: docker lint
+on:
+  pull_request:
+    branches:
+      - 'main'
+
+jobs:
+  alpine-test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "triggered by ${{ github.event_name }}"
+      - run: echo "branch ${{ github.ref }}"
