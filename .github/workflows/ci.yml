@@ -5,8 +5,20 @@ on:
       - 'main'
 
 jobs:
-  alpine-test:
+  base-info:
     runs-on: ubuntu-latest
     steps:
       - run: echo "triggered by ${{ github.event_name }}"
       - run: echo "branch ${{ github.ref }}"
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@master
+    - name: lint
+      uses: luke142367/Docker-Lint-Action@v1.0.0
+      with:
+        target: Dockerfile
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
