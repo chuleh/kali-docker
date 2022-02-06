@@ -21,7 +21,7 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master
 RUN apt install -y nmap dirb gobuster masscan wfuzz \
 	snmpenum snmp python3-pip netcat-traditional proxychains vim sqlmap wpscan \
 	metasploit-framework php ruby samba-common smbclient hydra patator \
-	smbmap
+	smbmap ffuf
 
 # secList
 RUN git clone https://github.com/danielmiessler/SecLists /seclists
