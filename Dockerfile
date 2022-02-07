@@ -1,4 +1,4 @@
-FROM kalilinux/kali-rolling:latest
+FROM kalilinux/kali-rolling:amd64
 
 ENV TERM xterm-256color
 
@@ -8,7 +8,7 @@ RUN rm -Rf /var/lib/apt-get && \
 	apt-get upgrade -y 
 
 # base stuff
-RUN apt-get install -y git unzip neovim \
+RUN apt-get install -y --no-install-recommends git unzip neovim \
 	zsh curl telnet strace \
 	wget python3 python3-pip proxychains \
 	proxychains4 ncat socat
