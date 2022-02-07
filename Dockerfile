@@ -18,7 +18,7 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master
 	sed -i -e 's/robbyrussell/minimal/' ~/.zshrc 
 
 # tools
-RUN apt-get install -y nmap dirb gobuster masscan wfuzz \
+RUN apt-get install -y --no-install-recommends nmap dirb gobuster masscan wfuzz \
 	snmpenum snmp python3-pip netcat-traditional proxychains vim sqlmap wpscan \
 	metasploit-framework php ruby samba-common smbclient hydra patator \
 	smbmap ffuf
