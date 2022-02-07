@@ -5,8 +5,17 @@ on:
       - 'main'
 
 jobs:
-  alpine-test:
+  base-info:
     runs-on: ubuntu-latest
     steps:
       - run: echo "triggered by ${{ github.event_name }}"
       - run: echo "branch ${{ github.ref }}"
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "linting"
+      - uses: actions/checkout@v2 
+      - uses: hadolint/hadolint-action@v1.6.0
+        with:
+          dockerfile: Dockerfile
+          ignore: DL3008 DL3009
