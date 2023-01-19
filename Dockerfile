@@ -10,8 +10,9 @@ RUN rm -Rf /var/lib/apt-get && \
 # base stuff
 RUN apt-get install -y --no-install-recommends git unzip neovim \
 	zsh curl telnet strace \
-	wget python3 python3-pip proxychains \
-	proxychains4 ncat socat
+	wget python3 proxychains \
+	proxychains4 ncat socat \
+	bind-essentials
 
 # cute shell
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended && \
